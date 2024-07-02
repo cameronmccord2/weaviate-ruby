@@ -30,6 +30,7 @@ module Weaviate
       vector_index_type: nil,
       vector_index_config: nil,
       vectorizer: nil,
+      vectorizer_config: nil,
       module_config: nil,
       inverted_index_config: nil,
       replication_config: nil
@@ -50,6 +51,7 @@ module Weaviate
         end
         req.body["invertedIndexConfig"] = inverted_index_config unless inverted_index_config.nil?
         req.body["replicationConfig"] = replication_config unless replication_config.nil?
+        req.body["vectorizerConfig"] = vectorizer_config unless vectorizer_config.nil?
       end
 
       response.body
